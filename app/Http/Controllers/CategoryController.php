@@ -50,7 +50,7 @@ class CategoryController extends Controller
     {
         //
         $cat = Category::findOrFail($id);
-        $post = TextPost::where('category_id',$id)->paginate(25);
+        $post = TextPost::where('category_id',$id)->paginate(12);
         if(Auth::check())
             return view('post.allposts',['posts' => $post,'cat'=>$cat] );
         else
