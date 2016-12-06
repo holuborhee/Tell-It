@@ -1,0 +1,879 @@
+#mn{
+	
+	border: 1px solid red;
+}
+
+:root {
+    --primary: #ff0101;
+    --primaryA: #f4511e;
+    --secondary: rgba(18, 84, 19, 0.88);
+    --myBlack: #000000;
+    --myWhite: #ffffff;
+    --myAsh: #bbbbb9;
+    --whatsapp: #43D854;
+    --facebook: #3b5998;
+    --youTube: #e52d27;
+    --twitter: #55ACEE;
+    --googlePlus: #dd4b39;
+}
+
+/*--
+-------------------------------------------------
+------------------------------------------------- 
+----------------General rule starts here---------
+-------------------------------------------------
+-------------------------------------------------
+--*/
+body{
+    font-family: 'Poppins',"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+	color: var(--myBlack,black);
+	background-color: var(--myWhite,white);
+}
+
+.btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+}
+a:hover{
+	color: var(--primaryA,orange);
+	text-decoration:none;
+}
+
+a{
+	color: var(--primary,red);
+	text-decoration:none;
+}
+mark{
+	background-color: var(--primary,red);
+	color:var(--myWhite,white);
+	font-weight: 600;font-size: 16px;
+}
+
+.sec-mark{
+	background-color: var(--myWhite,white);
+	color:var(--secondary,green);
+	margin-top: 5px;
+	font-weight: 800;
+	font-size: 16px;
+}
+
+img{
+	
+	border-radius: 2px;
+}
+.fb-link{
+    color: var(--facebook,#3b5998) !important;
+}
+.twitter-link{
+    color: var(--twitter, #55ACEE) !important;
+}
+
+.youtube-link{
+    color: var(--youTube, #e52d27) !important;
+}
+
+.google-plus-link{
+    color: var(--googlePlus, #dd4b39) !important;
+}
+
+.whatsapp-link{
+
+	color: var(--whatsapp, #43D854) !important;
+}
+.advert{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-control{
+	color: var(--myBlack,black);
+    background-color: var(--myWhite,white);
+    background-image: none;
+    border: 1px solid var(--primary,red);
+}
+
+.form-control:focus{
+	color: var(--myBlack,black);
+    background-color: var(--myWhite,white);
+    background-image: none;
+    border: 1px solid var(--primaryA,orange);
+}
+
+.input-group-addon {
+	background-color: var(--primaryA,green);
+	color: var(--myBlack,black);
+	border: 1px solid var(--primary,red);
+}
+
+/*--
+-------------------------------------------------
+------------------------------------------------- 
+------------------General rule ends here---------
+-------------------------------------------------
+-------------------------------------------------
+--*/
+
+.subnav
+{
+	
+	margin-top: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-size: 16px;
+	font-weight: 600;
+	/*background-color: var(--primaryA,orange);
+	position: absolute;
+	bottom: 0px;
+	color:white;*/
+
+	
+
+}
+
+.subnav #abt a{
+	margin-left: 50px;
+	/*color: var(--primary,red);*/
+
+}
+
+.subnav .navbar-right a{
+	padding: 0px;
+	color: var(--primary,red) !important;
+}
+
+.subnav .navbar-right a:hover{
+	padding: 0px;
+	color: var(--primaryA,orange) !important;
+}
+
+.subnav i{
+	margin-left: 20px;
+	font-size: 20px;
+	cursor: pointer;
+
+}
+
+.navbar-right>li{
+	margin-left: 50px;
+}
+
+
+.navbar-fixed-top, .navbar-default{
+	padding:0px 50px;
+	height: inherit;
+	min-height: 125px; 
+    background-color: #ffffff; 
+}
+
+.navbar-brand{
+   height: inherit; 
+    
+}
+
+.navbar-brand>.col-xs-12{
+    padding-left: 0px;
+    padding-right: 0px;
+    font-weight:800;
+    color: #000000;
+    font-size: 26px;
+    height: 32px !important;
+    
+}
+.top-links{
+    margin-bottom: 20px;;
+}
+
+.top-links>i{
+    margin-left: 15px;
+    font-size: 20px;
+    border-radius:none;
+    /*color: red; */
+}
+#logo-verb{
+	color: var(--primary,red);
+	
+    
+    
+}
+#logo-exp{
+    color: var(--secondary,green);
+    font-family: 'Georgia';
+    font-size: 60px;
+    font-weight: 800;
+    
+    
+}
+
+
+/* container for the body excluding the bar */
+.container-fluid {
+    padding: 0px 30px;
+    padding-top: 20px;
+}
+
+
+
+
+
+
+
+
+/*--
+-------------------------------------------------
+------------------------------------------------- 
+---------------Middle column starts here---------
+-------------------------------------------------
+-------------------------------------------------
+--*/
+
+#midcol{
+	
+	padding:0px 15px;
+	margin-right: auto;
+	margin-left: 3%;
+}
+
+.carousel-control .icon-next, .carousel-control .icon-prev{
+	font-weight: 300;
+	font-size: 50px;
+	color: var(--secondary,green);
+	top: 25%;
+	background-color: var(--primaryA, red);
+	height: inherit;
+	border-radius: 50%;
+	width: 50px;
+	margin-top: 0px !important;
+}
+
+.carousel-control .icon-next {
+    right: 20%;
+    
+}
+
+.carousel-control .icon-prev {
+    left: 20%;
+    
+}
+
+
+#articles{
+	
+	margin-top: 4px;
+}
+
+#articles .row{
+	
+	margin: 0px;
+}
+
+#articles .row>.col-sm-3{
+	
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+#articles .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+
+#articles .thumbnail img {
+   width: 100%;
+    height: 100px;
+    
+    border-radius: 3px;
+}
+
+
+/* Style for feeds starts here */
+.newsfeed{
+/*border: 1px solid;*/
+	width:100%;
+	
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+	
+}
+
+.newsfeed:hover, .newsfeed:focus{
+
+     cursor: text;
+}
+
+#newsCarousel img{
+	height: 500px;
+	width: 100%;
+}
+
+.headline-carousel{
+    right:0px;
+    left:0px;
+    bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    background-color: var(--secondary,orange) ;
+    opacity: 0.75;
+    height:35%;
+    text-align: left;
+    
+
+}
+
+
+.headline-carousel .lead a{
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--primary,black) !important;
+    
+
+}
+
+.headline-carousel .lead a:hover{
+    
+    color: var(--myBlack,black) !important;
+    
+
+}
+.textnews>img{
+	
+	padding:0px;
+	
+	/*border: 1px solid green;*/
+	float:left;
+	height:auto;
+    width:35%;
+    margin-top: auto;
+    margin-bottom:auto;
+   display: inline;
+	
+}
+
+.textnews > .content{
+	
+	padding:0px;
+	
+	/*border: 1px solid green;*/
+	width: 65%;
+	float:left;
+    padding-left:5px;
+    margin-top: auto;
+    margin-bottom:auto;
+   /* display: inline;*/
+	
+}
+.textnews > .content>h3{
+	margin-top: 10px;
+	margin-bottom: 5px;
+	
+	
+}
+.textnews > .content>h3 a{
+	font-size: 21px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-weight: 600;
+	color: var(--myBlack,black) !important;
+}
+.textnews > .content>p{
+		
+	margin-top: 0px;
+	margin-bottom: 3px;
+}
+
+.color{
+	
+	color:#990000;
+	color:#A60808;
+	color:#B00909;
+}
+
+.picturenews .thumbnail>img{
+	
+	max-height: 600px;
+
+	
+}
+
+
+.videonews{
+	margin-right:auto;
+	margin-left:auto;
+}
+.videonews>video{
+	
+	max-height: 600px;
+	width:100%
+	
+}
+
+.pictureadvert img{
+	width:100%;
+	
+}
+
+.textadvert>img{
+	
+	padding:0px;
+	
+	/*border: 1px solid green;*/
+	float:left;
+	height:auto;
+    width:30%;
+    margin-top: auto;
+    margin-bottom:auto;
+   display: inline;
+	
+}
+.textadvert > .content{
+	
+	padding:0px;
+	
+	/*border: 1px solid green;*/
+	width: 70%;
+	float:left;
+    padding-left:5px;
+    margin-top: auto;
+    margin-bottom:auto;
+   /* display: inline;*/
+	
+}
+
+
+/*style for feeds ends here*/
+
+.page-title{
+	color:#990000;
+	font-weight:800;
+}
+
+
+
+
+ul.news-action{
+    list-style: none;
+    padding-left: 0px;
+    margin-top: 20px;
+    
+}
+
+.news-action>li{
+   display: inline;
+}
+
+.news-action>li>a{
+     color:#990000;
+      
+}
+
+.news-action>li>button>.fa{
+     margin-right: 3px;;
+      
+}
+
+.news-action>li>a>i:hover, .news-action>li>a>i:focus {
+     background-color:#dd4b39;
+      
+}
+
+.feed-btn{
+	position: relative;
+
+	
+}
+
+.feed-btn div{
+	display: inline;
+
+	
+}
+.feed-btn i{
+	
+	font-size: 25px;
+	color: var(--primaryA,orange);
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.feed-btn i:hover{
+	
+	font-weight: 600;
+	
+}
+.feed-btn-abs{
+	position: absolute;
+	right: 2px;
+}
+
+button.twitter-link{
+    background-color: var(--twitter, #55ACEE) !important;
+    color: white !important;
+}
+
+button.twitter-link:hover{
+    color: var(--twitter, #55ACEE) !important;
+    background-color: white !important;
+    border: 1px solid var(--twitter, #55ACEE) !important;
+}
+
+
+
+button.google-plus-link{
+    background-color: var(--googlePlus, #dd4b39) !important;
+    color: white !important;
+}
+
+button.google-plus-link:hover{
+    color: var(--googlePlus, #dd4b39) !important;
+    background-color: white !important;
+    border: 1px solid var(--googlePlus, #dd4b39) !important;
+}
+
+button.fb-link{
+     background-color: var(--facebook,#3b5998) !important;
+    color: white !important;
+}
+
+button.fb-link:hover{
+     color: var(--facebook,#3b5998) !important;
+    background-color: white !important;
+    border: 1px solid var(--facebook,#3b5998) !important;
+}
+
+
+
+
+
+/*--
+-------------------------------------------------
+------------------------------------------------- 
+-----------------Middle Column ends here---------
+-------------------------------------------------
+-------------------------------------------------
+--*/
+
+
+
+
+/*--
+-------------------------------------------------
+------------------------------------------------- 
+------------------Right bar starts here----------
+-------------------------------------------------
+-------------------------------------------------
+--*/
+
+
+.right-bar{
+	
+}
+
+.right-bar-child{
+margin-right:auto;
+	margin-left:auto;
+	margin-bottom: 10px;
+	width:100%;
+}
+
+#read-next mark{
+	float: none !important;
+}
+
+.advert .carousel-inner .item>img, .advert>img{
+	
+	width:100%;
+	height: 600px;
+}
+
+.advert>video{
+	
+	width:100%;
+}
+
+.featured-news{
+	width:100%;
+}
+
+.featured-news .news-box{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 100px;
+}
+.featured-news img{
+    width: 27%;
+    height:100px;
+    float:left;
+    margin-right: 3%;
+     
+}
+
+.news-box>span{
+    width: 69%;
+    float:left;
+    
+}
+.featured-news h4{
+    width: 69%;
+    font-size: 20px;
+    font-family: 'Georgia';
+    
+    float:left;
+    
+}
+.featured-news a{
+    color: var(--secondary,green);
+    
+}
+
+.featured-news a:hover{
+    
+    text-decoration: underline;
+    color: var(--myBlack,black);
+}
+
+.featured-news i{
+    
+    font-size: 20px;
+    margin-right: 7px;
+    color: var(--primaryA,orange);
+    display: inline; 
+    
+    
+}
+.featured-news small{
+    
+    margin-left: 2px;;
+    color:#000000; 
+    
+    
+}
+.featured-news>.dropdown,.featured-news>.dropdown-toggle{
+    width: 100%;
+    
+}
+.featured-news>.dropdown>button{
+width: 100%;
+    
+    padding: 0px; 
+    border:none;
+    border-radius: 0px; 
+}
+
+.featured-news>.dropdown>button:hover{
+    color: #dd4b39;
+    background-color: white;
+    
+}
+
+.featured-news >.open > .dropdown-toggle.btn-default:focus{
+    color: #dd4b39 ;
+    background-color: white;
+    
+}
+
+.featured-news>ul>li{
+    list-style: none;
+}
+
+
+.featured-news>ul{
+    margin-top:5px; 
+    padding-left: 0px;
+}
+
+
+
+
+
+
+/*--
+-------------------------------------------------
+------------------------------------------------- 
+------------------Right bar ends here------------
+-------------------------------------------------
+-------------------------------------------------
+--*/
+
+
+
+
+/*--
+-------------------------------------------------
+------------------------------------------------- 
+------------------Left bar starts here-----------
+-------------------------------------------------
+-------------------------------------------------
+--*/
+
+
+.main-nav{
+	margin-top: 50px;
+}
+
+.subnav>.main-nav{
+	display: none;
+}
+
+.main-nav>li>a{
+
+	font-size: 15px;
+	font-weight: 800;
+	margin-bottom: 50px;
+	line-height: 20px;
+	padding:0px;
+	color: var(--myBlack,black);
+}
+.main-nav>li>a:hover{
+	color: var(--primaryA,orange);
+	background-color: inherit;
+}
+
+
+a#active{
+
+	color: var(--secondary,red) !important;
+}
+
+
+.left-bar{
+	
+	padding:0px;
+	float: left;
+}
+
+.nav>li>a>.fa{
+display: inline;
+margin-right: 2px;;
+}
+
+
+
+
+
+/*--
+-------------------------------------------------
+------------------------------------------------- 
+------------------Left bar ends here-------------
+-------------------------------------------------
+-------------------------------------------------
+--*/
+
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+}
+footer{
+	margin-top: 40px;
+  background-color: var(--myAsh,black);
+}
+
+
+/*--
+-------------------------------------------------
+------------------------------------------------- 
+------------------Media Queries starts here------
+-------------------------------------------------
+-------------------------------------------------
+--*/
+
+@media (max-width: 990px){
+
+.navbar-brand>.col-xs-12 {
+    
+    font-size: 20px;
+    height: 25px !important;
+}
+
+#logo-exp {
+        font-size: 40px;    
+}
+.subnav {
+    margin-top: 6px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 12px;
+    
+}
+
+#midcol{
+	
+	
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.col-sm-3{
+	    width: 22%;
+}
+
+}
+
+
+/* TAB VIEW */
+@media (max-width: 768px){
+
+.main-nav>li>a {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    line-height: 15px;
+    
+}
+
+
+}
+
+
+/* Phone VIEW */
+@media (max-width: 555px){
+
+.left-bar, #newsCarousel, #articles, #nav-default, .textnews>img, .featured-news{
+	display: none;
+}
+
+.navbar-fixed-top {
+    position: initial;
+
+}
+
+#midcol,.textnews > .content{
+	width: 100%;
+}
+
+
+.subnav>.main-nav{
+	display: inline;
+}
+
+#read-next{
+	display: block;
+
+}
+}
+
+/*--
+-------------------------------------------------
+------------------------------------------------- 
+------------------Media Queries ends here--------
+-------------------------------------------------
+-------------------------------------------------
+--*/
+
+.demo3 {
+    font-family: Arial, sans-serif;
+    border: 1px solid #C20;
+    margin: 10px 0;
+    font-style: italic;
+    position: relative;
+    padding: 0 0 0 80px;
+    box-shadow: 0 2px 5px -3px #000;
+    border-radius: 3px;
+}
+
+.demo3 ul li{
+    list-style: none;
+}

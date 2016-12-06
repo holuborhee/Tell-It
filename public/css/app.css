@@ -1,0 +1,41 @@
+ .right_col .panel{
+ 	margin-top: 20px;
+ }
+
+ .page-header{
+ 	margin-bottom: 30px;
+ }
+
+ .picturenews .thumbnail>img {
+    max-height: 500px;
+    width:auto;
+}
+
+.picturenews .thumbnail{height:600px;overflow:hidden !important}
+
+.slideshow-box .thumbnail>img{max-height: 120px;}
+
+div.slideshow-box{
+    min-height: 200px;
+    padding: 9px;
+}
+
+.profile>div{
+	font-size: 22px;
+}
+
+.profile p{
+	font-size: 20px;
+}
+
+.panel-heading img{
+	width: auto;
+	height: 120px;
+}
+
+#editor {
+ 
+	min-height:700px;
+	overflow-y: scroll;
+
+}
