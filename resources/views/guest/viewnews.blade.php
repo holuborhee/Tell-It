@@ -52,7 +52,8 @@
     {!!html_entity_decode($article->body)!!}
     
     <ul class="news-action">
-    <li><a href="#"><i class="fa fa-heart-o"></i></a> {{$article->post->likes or $article->likes}} people like this</li>
+    <!--<li><a href="#"><i class="fa fa-heart-o"></i></a> {{$article->post->likes or $article->likes}} people like this</li>-->
+    <div class="fb-like" data-href="{{url('/report/' . $article->id)}}" data-width="25" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     <li><button type="button" class="btn btn-primary fb-link" id="fb-share"><i class="fa fa-facebook"></i> Facebook</button></li>
     <li><button type="button" class="btn btn-primary twitter-link"><i class="fa fa-twitter"></i>Twitter</button></li>
     <li><button type="button" class="btn btn-primary google-plus-link"><i class="fa fa-google-plus"></i>Google +</button></li>
