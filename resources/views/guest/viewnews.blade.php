@@ -53,7 +53,7 @@
     
     <ul class="news-action">
     <li><a href="#"><i class="fa fa-heart-o"></i></a> {{$article->post->likes or $article->likes}} people like this</li>
-    <li><button type="button" class="btn btn-primary fb-link"><i class="fa fa-facebook"></i> Facebook</button></li>
+    <li><button type="button" class="btn btn-primary fb-link" id="fb-share"><i class="fa fa-facebook"></i> Facebook</button></li>
     <li><button type="button" class="btn btn-primary twitter-link"><i class="fa fa-twitter"></i>Twitter</button></li>
     <li><button type="button" class="btn btn-primary google-plus-link"><i class="fa fa-google-plus"></i>Google +</button></li>
      </ul>
@@ -115,6 +115,14 @@ $.ajaxSetup({
         
     });
 });
+
+    $(document).on('click','#fb-share', function(event){
+        FB.ui({
+            method: 'share',
+            display: 'popup',
+            href: '{{url('/report/' . $article->id)}}',
+            }, function(response){});
+    });
 
 </script>
 @endsection
