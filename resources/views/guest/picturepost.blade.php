@@ -19,7 +19,7 @@
   </i>
   </span>
     <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
+      <li class="fb-share"><i class="fa fa-facebook-square fb-link"></i><input type="hidden" class="link" value="{{url('/photos/' .$p->id)}}" /></li>
   <li><i class="fa fa-twitter-square twitter-link"></i></li>
   <li><i class="fa fa-youtube-play youtube-link"></i></li> 
   <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
@@ -30,7 +30,7 @@
   </div>
   </div>
     <h3><a href="{{url('/photos/'.$p->id)}}"><mark>PHOTO</mark> - {{$p->title}}.</a></h3>
-        <img src="images/slide2.jpg"  />
+        <img src="{{asset('storage/'. $p->photos->first()->picture)}}"  />
         <p><strong>{{$p->photos->count()}} Photos</strong></p>
       </div>  
 </div>

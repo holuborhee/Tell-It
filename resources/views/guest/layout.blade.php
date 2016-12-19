@@ -42,6 +42,15 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
+<!--<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/yo_NG/sdk.js#xfbml=1&version=v2.8&appId=1077547995687499";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>-->
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -78,7 +87,8 @@
   <li><a href="report.html">Submit A Report</a></li>
   <li>
   <ul class="nav navbar-nav">
-  <li><i class="fa fa-facebook-square fb-link"></i></li>
+  <!--<li><i class="fa fa-facebook-square fb-link"></i></li>-->
+  <li><div class="fb-like" data-href="https://www.facebook.com/Verbatim-Express-Newspapers-688870161165344/" data-width="20" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div></li>
   <li><i class="fa fa-twitter-square twitter-link"></i></li>
   <li><i class="fa fa-youtube-play youtube-link"></i></li> 
   <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
@@ -146,7 +156,7 @@
                 </i>
                 </span>
                 <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
+      <li class="fb-share"><i class="fa fa-facebook-square fb-link"></i><input type="hidden" class="link" value="{{url('/report/' .$post->textpost->id)}}" /></li>
   <li><i class="fa fa-twitter-square twitter-link"></i></li>
   <li><i class="fa fa-youtube-play youtube-link"></i></li> 
   <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
@@ -285,6 +295,16 @@
     });
 
   });
+
+  $(document).on('click','.fb-share', function(event){
+    var link = $(this).find('.link').val();
+        FB.ui({
+            method: 'share',
+            display: 'popup',
+            href: link,
+            }, function(response){});
+            
+    });
 </script>
 
 <script id="dsq-count-scr" src="//verbatim-express.disqus.com/count.js" async></script>

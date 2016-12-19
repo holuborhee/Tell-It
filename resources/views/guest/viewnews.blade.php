@@ -3,8 +3,8 @@
 @section('facebook')
     <meta property="og:url" content="{{url('/report/' . $article->id)}}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{$article->post->title}}" />
-    <meta property="og:description" content="{{$article->post->lead}}" />
+    <meta property="og:title" content="{{$article->post?$article->post->title:$article->title}}" />
+    <meta property="og:description" content="{{$article->post?$article->post->lead:$article->lead}}" />
     @unless($article->picture == 'none')
     <meta property="og:image" content="{{asset('storage/'. $article->picture)}}" />
     @endunless

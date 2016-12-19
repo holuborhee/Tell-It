@@ -1,5 +1,15 @@
 @extends('guest.layout')
 
+
+@section('facebook')
+    <meta property="og:url" content="{{url('/photos/' . $pos->id)}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{$pos->title}}" />
+    <meta property="og:description" content="{{$pos->lead}}" />
+    
+    <meta property="og:image" content="{{asset('storage/'. $pos->photos->first()->picture)}}" />
+    
+@endsection
 @section('mid_col')
     @unless(Auth::guest())
     <nav aria-label="...">
@@ -79,7 +89,7 @@
     
     <ul class="news-action">
     <li><a href="#"><i class="fa fa-heart-o"></i></a> {{$pos->likes}} people like this</li>
-    <li><button type="button" class="btn btn-primary fb-link"><i class="fa fa-facebook"></i> Facebook</button></li>
+    <li><button type="button" class="btn btn-primary fb-link" id="fb-share"><i class="fa fa-facebook"></i> Facebook</button></li>
     <li><button type="button" class="btn btn-primary twitter-link"><i class="fa fa-twitter"></i>Twitter</button></li>
     <li><button type="button" class="btn btn-primary google-plus-link"><i class="fa fa-google-plus"></i>Google +</button></li>
      </ul>
@@ -141,6 +151,14 @@ $.ajaxSetup({
         
     });
 });
+
+    $(document).on('click','#fb-share', function(event){
+        FB.ui({
+            method: 'share',
+            display: 'popup',
+            href: '{{url('/photos/' . $pos->id)}}',
+            }, function(response){});
+    });
 
 </script>
 @endsection
