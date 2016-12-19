@@ -13,10 +13,12 @@ class ArticleController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
+
+        $this->middleware('countview')->only('show');
     }
     /**
      * Display a listing of the resource.
-     *
+     *  @param  Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -24,7 +26,7 @@ class ArticleController extends Controller
         //
         if($request->has('act') AND $request->act == 'inslide')
         {
-            $post = Post::where('inslideshow',1)->latest()->get();
+            $post = Article::where('inthumbnail',1)->latest()->get();
             return response()->json($post);
         }
         elseif ($request->has('act') AND $request->act == 'search') {
@@ -44,8 +46,15 @@ class ArticleController extends Controller
 
             return response()->json($post);
         }
+
+        if($request->ajax()){
+        $articles = Article::where('inthumbnail',0)->latest()->paginate(5);
+        return response()->json($articles);
+    }else{
         $article = Article::latest()->paginate(10);
         return view('guest.allarticles',['posts'=>$article]);
+    }
+
         //return $post;
     }
 
@@ -142,13 +151,27 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         //
-        if($request->has('act'))
+        if($request->has('act') AND $request->act == 'publish')
         {
-           $article = Article::findOrFail($id);
+            $article = Article::findOrFail($id);
            $article->isPublished = 1;
            $article->save();
            /*return response()->json($article);*/
            return response()->json(['success'=>true]);
+        }
+        if($request->has('act') AND $request->act == 'addthumbnail')
+        {
+            $post = Article::findOrFail($id);
+            $post->inthumbnail = 1;
+            return response()->json(['success'=>$post->save()]);
+
+           
+        }
+        if($request->has('act') AND $request->act == 'remove')
+        {
+            $post = Article::findOrFail($id);
+            $post->inthumbnail = 0;
+            return response()->json(['success'=>$post->save()]);
         }
         $this->validate($request, [
             'title' => 'required',

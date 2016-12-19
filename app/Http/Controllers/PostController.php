@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\TextPost;
 
 class PostController extends Controller
 {
@@ -17,7 +18,7 @@ class PostController extends Controller
         //
         if($request->has('act') AND $request->act == 'inslide')
         {
-            $post = Post::where('inslideshow',1)->latest()->get();
+            $post = Post::where('inslideshow',1)->with('textpost')->latest()->get();
             return response()->json($post);
         }
         elseif ($request->has('act') AND $request->act == 'search') {
@@ -37,7 +38,7 @@ class PostController extends Controller
 
             return response()->json($post);
         }
-        $post = Post::where('inSlideShow',0)->latest()->paginate(2);
+        $post = Post::where('inSlideShow',0)->with('textpost')->latest()->paginate(5);
         return response()->json($post);
         //return $post;
     }

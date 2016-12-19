@@ -81,11 +81,22 @@
 
   <div id="articles" class="">
   <div class="row">
+  <?php  $count = App\Article::where('inthumbnail',1)->count() ?>
+  @foreach(App\Article::where('inthumbnail',1)->cursor() as $p)
+    <div class="@if($count==4) col-sm-3 @elseif($count==3) col-sm-4 @elseif($count==2) col-sm-6 @elseif($count==1) col-sm-12 @endif">
+      <div class="thumbnail">
+        <img src="{{asset('storage/'.$p->picture)}}" alt="article image">
+        <a href="{{url('/article/'.$p->id)}}"><strong>{{$p->title}}.</strong></a>
+          
+      </div>
+    </div>
+    @endforeach
+    <!--
     <div class="col-sm-3">
       <div class="thumbnail">
         <img src="{{asset('storage/articles/article.jpg')}}" alt="article image">
-        <h5><a href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a>
-          </h5>
+        <a href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a>
+        
       </div>
     </div>
     <div class="col-sm-3">
@@ -101,14 +112,7 @@
         <a href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a>
         
       </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="thumbnail">
-        <img src="{{asset('storage/articles/article.jpg')}}" alt="article image">
-        <a href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a>
-        
-      </div>
-    </div>
+    </div>-->
     <button onclick="location.href='{{url('/article')}}';" class="btn btn-sm btn-block">View All Articles</button>
 </div>
 </div>

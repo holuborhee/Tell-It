@@ -66,7 +66,7 @@
   <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
   </ul>
   </li>
-  <li>WEDNESSDAY, JUNE 1, 2016</li>
+  <li>{{date('l, F j, Y')}}</li>
 
 </ul>
 <ul class="nav main-nav ">
@@ -111,9 +111,40 @@
     <div class="featured-news right-bar-child" id="read-next">
 
   
-    <p><mark class="pull-left">What to Read Next</mark></p>
+    <p><mark class="pull-left">Trending</mark></p>
       <div >
+      @foreach(App\Post::where('type','Text')->orderBy('views', 'desc')->latest()->take(10)->cursor() as $post)
         <div class="news-box">
+              
+                <img src="{{asset('storage/'. $post->textpost->picture)}}" />
+                
+                <span>
+                <span class="dropdown">
+                <span class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-share-alt"><small>3K</small>
+                </i>
+                </span>
+                <ul class="dropdown-menu">
+      <li><i class="fa fa-facebook-square fb-link"></i></li>
+  <li><i class="fa fa-twitter-square twitter-link"></i></li>
+  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
+  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
+    </ul>
+
+    </span>
+                
+                
+                </i><i class="fa fa-eye"><small>{{$post->views}}</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
+                </span>
+               
+              
+                 
+                <h4><a href="viewnews.html">{{$post->title}}</a></h4>
+           
+        </div>
+        @endforeach
+                
+        <!--<div class="news-box">
               
                 <img src="images/slide4.jpg" />
                 
@@ -345,35 +376,6 @@
            
         </div>
                 
-        <div class="news-box">
-              
-                <img src="images/slide4.jpg" />
-                
-                <span>
-                <span class="dropdown">
-                <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
-                </i>
-                </span>
-                <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
-  <li><i class="fa fa-twitter-square twitter-link"></i></li>
-  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
-  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
-    </ul>
-
-    </span>
-                
-                
-                </i><i class="fa fa-comment"><small>300</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
-                </span>
-               
-              
-                 
-                <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-           
-        </div>
-                
                 
         <div class="news-box">
               
@@ -402,7 +404,7 @@
                  
                 <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
            
-        </div>
+        </div>-->
       </div>
           </div>
     

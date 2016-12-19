@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Post;
+use App\Article;
+use App\Tag;
 use Hash;
 
 class HomeController extends Controller
@@ -31,7 +34,9 @@ class HomeController extends Controller
 
     public function test()
     {
-        return view('test');
+        //return view('test');
+        $t = Tag::where('id', '>', 50000)->get();
+        return response()->json($t);
     }
 
     public function changePassword()
@@ -83,6 +88,6 @@ class HomeController extends Controller
         
         
 
-        return view('random.customize',['posts'=>Post::where('inslideshow',1)->latest()->get()]);
+        return view('random.customize',['posts'=>Post::where('inslideshow',1)->with('textpost')->latest()->get(),'articles'=>Article::where('inthumbnail',1)->latest()->get()]);
     }
 }

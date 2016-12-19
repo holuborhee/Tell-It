@@ -9,6 +9,11 @@ use App\TextPost;
 
 class TextPostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('countview')->only('show');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -138,7 +143,10 @@ class TextPostController extends Controller
             $t = TextPost::findOrFail($id);
            $article = Post::findOrFail($t->post_id);
            $article->isPublished = 1;
+           
            $article->save();
+
+           $article->users()->attach($request->user()->id, ['action' => 'Publish']);
            /*return response()->json($article);*/
            return response()->json(['success'=>true]);
         }
@@ -155,10 +163,10 @@ class TextPostController extends Controller
 
         $p->title = $request->title;
         $p->lead = $request->lead;
-
+        
         $p->save();
         
-        
+        $p->users()->attach($request->user()->id, ['action' => 'Edit']);
         $article->body = $request->body;
 
         $article->save();
@@ -176,6 +184,8 @@ class TextPostController extends Controller
     {
         //
         $t = TextPost::findOrFail($id);
+        $p = Post::findOrFail($t->post_id);
+        $p->users()->attach($request->user()->id, ['action' => 'Delete']);
         Post::destroy($t->post_id);
         TextPost::destroy($id);
         return view('info',['title'=>'SUCCESS', 'content'=>'Record Successfully Deleted','link'=>'/user','link_text'=>'Back To Home']);
