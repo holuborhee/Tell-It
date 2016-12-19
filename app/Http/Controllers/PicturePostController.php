@@ -110,7 +110,7 @@ class PicturePostController extends Controller
     public function show($id)
     {
         //
-        return view('guest.viewpicture',Post::findOrFail($id));
+        return view('guest.viewpicture',['pos'=>Post::findOrFail($id)]);
     }
 
     /**

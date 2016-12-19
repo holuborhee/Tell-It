@@ -445,6 +445,23 @@ img{
 
 /*style for feeds ends here*/
 
+
+#picture-post-carousel img{
+	/*height: 500px;*/
+	width: 100%;
+}
+
+#picture-post-carousel p{
+	text-align: left;
+	color: var(--myBlack,black);
+	font-weight: 800;
+	font-size: 25px;
+}
+
+#picture-post-carousel{
+right:0px;
+    left:0px;
+}
 .page-title{
 	color:#990000;
 	font-weight:800;

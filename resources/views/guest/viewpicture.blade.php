@@ -8,14 +8,14 @@
     
   </ul>
 </nav>
-        <a href="{{url('/photos/'. $id .'/edit')}}" class="btn btn-primary">Edit</a>
+        <a href="{{url('/photos/'. $pos->id .'/edit')}}" class="btn btn-primary">Edit</a>
         @unless($isPublished)
 
         
                 <a class="btn btn-warning" id="pub-btn">Publish</a>
          
         @endif
-        <a href="{{ url('/photos/'. $id)}}" class="btn btn-danger"
+        <a href="{{ url('/photos/'. $pos->id)}}" class="btn btn-danger"
         onclick="event.preventDefault();
         if(confirm('You are about to delete this Post')){
                                                      document.getElementById('delete-form').submit();}">
@@ -24,7 +24,7 @@
                     </a> 
 
             
-                    <form id="delete-form" action="{{ url('/photos/'. $id) }}" method="POST" style="display: none;">
+                    <form id="delete-form" action="{{ url('/photos/'. $pos->id) }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                         </form>
@@ -32,13 +32,13 @@
         <a class="btn btn-default">View Info</a>
     @endunless
     <div class="page-header">
-	<h3>{{$title}}</h3>
-    <mark><i class="fa fa-calendar"></i> {{$created_at}} <i class="fa fa-clock-o"></i> </mark>
+	<h3>{{$pos->title}}</h3>
+    <mark><i class="fa fa-calendar"></i> {{$pos->getDay()}} <i class="fa fa-clock-o"></i> {{$pos->getTime()}}</mark>
     </div>
 
 
 
-    <div class = "carousel slide">
+    <div class = "carousel slide" id="picture-post-carousel" data-wrap="false">
    
    <!-- Carousel indicators 
    <ol class = "carousel-indicators">
@@ -52,12 +52,12 @@
    <!-- Carousel items -->
    <div class = "carousel-inner">
    <?php $i = 1; ?>
-   @foreach(App\PicturePost::where('post_id',$id)->cursor() as $p)
+   @foreach(App\PicturePost::where('post_id',$pos->id)->cursor() as $p)
    
       <div class = "item {{ $i == 1 ? 'active' : '' }}">
          <img src = "{{asset('storage/'. $p->picture)}}" alt = "First slide">
          <div class="carousel-caption">
-        <p>{{$p->description}}</p>
+        <p class="lead">{{$p->description}}</p>
       </div>
       </div>
       <?php $i++ ?>
@@ -71,14 +71,14 @@
    <a class = "carousel-control right" href = "#newsCarousel" data-slide = "next">&rsaquo;</a>-->
 
    <!-- Controls -->
-                <a class="left carousel-control" data-slide="prev" href="#newsCarousel"><span class="icon-prev"></span></a>
-                <a class="right carousel-control" data-slide="next" href="#newsCarousel"><span class="icon-next"></span></a>
+                <a class="left carousel-control" data-slide="prev" href="#picture-post-carousel"><span class="icon-prev"></span></a>
+                <a class="right carousel-control" data-slide="next" href="#picture-post-carousel"><span class="icon-next"></span></a>
   </div>
     
     
     
     <ul class="news-action">
-    <li><a href="#"><i class="fa fa-heart-o"></i></a> {{$likes}} people like this</li>
+    <li><a href="#"><i class="fa fa-heart-o"></i></a> {{$pos->likes}} people like this</li>
     <li><button type="button" class="btn btn-primary fb-link"><i class="fa fa-facebook"></i> Facebook</button></li>
     <li><button type="button" class="btn btn-primary twitter-link"><i class="fa fa-twitter"></i>Twitter</button></li>
     <li><button type="button" class="btn btn-primary google-plus-link"><i class="fa fa-google-plus"></i>Google +</button></li>
@@ -133,7 +133,7 @@ $.ajaxSetup({
     $.ajax({
         dataType: 'json',
         type: 'PUT',
-        url: "<?php echo route('photos.update',['id' => $id]) ?>",
+        url: "<?php echo route('photos.update',['id' => $pos->id]) ?>",
         data: {act:'publish'}
     }).done(function(data){
         toastr.success('Post published successfully.', 'Published', {timeOut: 5000});

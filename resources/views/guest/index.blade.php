@@ -1,6 +1,7 @@
 @extends('guest.layout')
 
 @section('mid_col')
+@unless(Request::has('page'))
 <div class="demo3">
         <ul>
            @foreach(App\BreakingNews::latest()->cursor() as $b)     
@@ -24,7 +25,9 @@
    <div class = "carousel-inner">
    <?php $i = 1; ?>
    @foreach(App\Post::where('inSlideShow',1)->cursor() as $p)
-   
+    @if($p->textpost->picture == 'none')
+      <?php continue; ?>
+    @endif
       <div class = "item {{ $i == 1 ? 'active' : '' }}">
          <img src = "{{asset('storage/'. $p->textpost->picture)}}" alt = "First slide">
          <div class="carousel-caption headline-carousel">
@@ -35,38 +38,6 @@
       <?php $i++ ?>
     @endforeach
       
-      <!--<div class = "item">
-         <img src = "images/slide2.jpg" alt = "Second slide" />
-         <div class="carousel-caption headline-carousel">
-
-        <p class="lead"><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></p>
-        <p>Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus, Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus, Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus.</p>
-      </div>
-      </div>
-      
-      <div class = "item">
-         <img src = "images/slide3.jpg" alt = "Third slide" />
-         <div class="carousel-caption headline-carousel">
-        <p class="lead"><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></p>
-        <p>Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus, Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus, Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus.</p>
-      </div>
-      </div>
-
-      <div class = "item">
-         <img src = "images/slide4.jpg" alt = "Third slide" />
-
-         <div class="carousel-caption headline-carousel">
-        <p class="lead"><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></p>
-        <p>Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus, Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus, Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus.</p>
-      </div>
-      </div>
-      <div class = "item">
-         <img src = "images/slide5.jpg" alt = "Third slide" />
-         <div class="carousel-caption headline-carousel">
-        <p class="lead"><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></p>
-        <p>Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus, Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus, Sed ultrices vehicula neque in dignissim. Fusce nec sagittis sem, mollis volutpat tortor. Fusce tempor ut turpis vel tempus.</p>
-      </div>
-      </div>-->
    </div>
    
    <!-- Carousel nav 
@@ -91,37 +62,46 @@
       </div>
     </div>
     @endforeach
-    <!--
-    <div class="col-sm-3">
-      <div class="thumbnail">
-        <img src="{{asset('storage/articles/article.jpg')}}" alt="article image">
-        <a href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a>
-        
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="thumbnail">
-        <img src="{{asset('storage/articles/article.jpg')}}" alt="article image">
-        <a href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a>
-        
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="thumbnail">
-        <img src="{{asset('storage/articles/article.jpg')}}" alt="article image">
-        <a href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a>
-        
-      </div>
-    </div>-->
+    
     <button onclick="location.href='{{url('/article')}}';" class="btn btn-sm btn-block">View All Articles</button>
 </div>
 </div>
-
+@endunless
 @foreach($posts as $p)
 
 @if($p->type == 'Text')
 <?php $post = $p->textpost; ?>
-<div class="newsfeed textnews">
+@if($post->picture == 'none')
+  <div class="newsfeed plain-text-advert">
+  <div class="content">
+  <div class="feed-btn hidden">
+  <div class="feed-btn-abs">
+  <div class="dropdown">
+  <span class="dropdown-toggle" data-toggle="dropdown">
+  <i class="fa fa-share-alt"><small> 3K</small>
+  </i>
+  </span>
+    <ul class="dropdown-menu">
+      <li><i class="fa fa-facebook-square fb-link"></i></li>
+  <li><i class="fa fa-twitter-square twitter-link"></i></li>
+  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
+  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
+    </ul>
+  </div>
+  <i class="fa fa-comment"><small> 300</small></i>
+  <i class="fa fa-heart-o"><small> 1.5K</small></i>
+  </div>
+  </div>
+    <mark>{{$post->category->name}}</mark>
+    <h3><a href="{{url('/report/'.$post->id)}}">{{$p->title}}.</a></h3>
+    <p>{{$p->lead}}. </p>
+    <mark class="sec-mark">Today</mark>
+  </div>
+</div>
+
+
+@else
+  <div class="newsfeed textnews">
 <img src="{{$post->picture != 'none'?asset('storage/'. $post->picture):asset('storage/reports/news.jpg')}}" class="textnews-img" />
   <div class="content">
   <div class="feed-btn hidden">
@@ -148,8 +128,11 @@
     <mark class="sec-mark">Today</mark>
   </div>
 </div>
-@elseif($p->type == 'Photo')
 
+@endif
+
+@elseif($p->type == 'Photo')
+  
 <div class="newsfeed picturenews"> 
     
       
@@ -172,15 +155,15 @@
   <i class="fa fa-heart-o"><small> 1.5K</small></i>
   </div>
   </div>
-    <h3><mark>PHOTO</mark> - {{$p->title}}.</h3>
-        <img src="images/slide2.jpg"  />
-        <p><strong>43 Photos</strong></p>
+    <h3><mark>PHOTO</mark> - <a href="{{url('/photos/'.$p->id)}}">{{$p->title}}.</a></h3>
+        <img src="{{asset('storage/'. $p->photos->first()->picture)}}"  />
+        <p><strong>{{$p->photos->count()}} Photos</strong></p>
       </div>  
 </div>
 
 
 @elseif($p->type == 'Video')
-
+  <?php continue; ?>
 <div class="newsfeed videonews">
   <h2><mark>VIDEO</mark> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2> 
     <video controls <!--autoplay-->>

@@ -1,5 +1,12 @@
 @extends('guest.layout')
 
+@section('facebook')
+    <meta property="og:url" content="{{url('/report/' . $article->id)}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{$article->post->title}}" />
+    <meta property="og:description" content="{{$article->post->lead}}" />
+    <meta property="og:image" content="{{asset('storage/'. $article->picture)}}" />
+@endsection
 @section('mid_col')
     @unless(Auth::guest())
     <nav aria-label="...">

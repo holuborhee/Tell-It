@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>VERBATIM EXPRESS | Lorem ipsum dolor sit amet, consectetur adipiscing elit.</title>
+  <title>VERBATIM EXPRESS | To express the News Verbatim.</title>
+    @yield('facebook')
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -111,13 +112,16 @@
     <div class="featured-news right-bar-child" id="read-next">
 
   
-    <p><mark class="pull-left">Trending</mark></p>
+    <p><mark class="pull-left">Trending News</mark></p>
       <div >
-      @foreach(App\Post::where('type','Text')->orderBy('views', 'desc')->latest()->take(10)->cursor() as $post)
+      @foreach(App\Post::where('type','Text')->orderBy('views', 'desc')->latest()->take(7)->cursor() as $post)
+      
+      
+    
         <div class="news-box">
-              
-                <img src="{{asset('storage/'. $post->textpost->picture)}}" />
-                
+              @unless($post->textpost->picture == 'none')
+                <img src="{{asset('storage/'. $post->textpost->picture)}}" /> 
+               @endunless 
                 <span>
                 <span class="dropdown">
                 <span class="dropdown-toggle" data-toggle="dropdown">
@@ -143,268 +147,6 @@
            
         </div>
         @endforeach
-                
-        <!--<div class="news-box">
-              
-                <img src="images/slide4.jpg" />
-                
-                <span>
-                <span class="dropdown">
-                <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
-                </i>
-                </span>
-                <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
-  <li><i class="fa fa-twitter-square twitter-link"></i></li>
-  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
-  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
-    </ul>
-
-    </span>
-                
-                
-                </i><i class="fa fa-comment"><small>300</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
-                </span>
-               
-              
-                 
-                <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-           
-        </div>
-                
-        <div class="news-box">
-              
-                <img src="images/slide4.jpg" />
-                
-                <span>
-                <span class="dropdown">
-                <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
-                </i>
-                </span>
-                <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
-  <li><i class="fa fa-twitter-square twitter-link"></i></li>
-  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
-  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
-    </ul>
-
-    </span>
-                
-                
-                </i><i class="fa fa-comment"><small>300</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
-                </span>
-               
-              
-                 
-                <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-           
-        </div>
-                
-        <div class="news-box">
-              
-                <img src="images/slide4.jpg" />
-                
-                <span>
-                <span class="dropdown">
-                <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
-                </i>
-                </span>
-                <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
-  <li><i class="fa fa-twitter-square twitter-link"></i></li>
-  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
-  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
-    </ul>
-
-    </span>
-                
-                
-                </i><i class="fa fa-comment"><small>300</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
-                </span>
-               
-              
-                 
-                <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-           
-        </div>
-                
-        <div class="news-box">
-              
-                <img src="images/slide4.jpg" />
-                
-                <span>
-                <span class="dropdown">
-                <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
-                </i>
-                </span>
-                <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
-  <li><i class="fa fa-twitter-square twitter-link"></i></li>
-  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
-  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
-    </ul>
-
-    </span>
-                
-                
-                </i><i class="fa fa-comment"><small>300</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
-                </span>
-               
-              
-                 
-                <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-           
-        </div>
-                
-        <div class="news-box">
-              
-                <img src="images/slide4.jpg" />
-                
-                <span>
-                <span class="dropdown">
-                <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
-                </i>
-                </span>
-                <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
-  <li><i class="fa fa-twitter-square twitter-link"></i></li>
-  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
-  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
-    </ul>
-
-    </span>
-                
-                
-                </i><i class="fa fa-comment"><small>300</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
-                </span>
-               
-              
-                 
-                <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-           
-        </div>
-                
-        <div class="news-box">
-              
-                <img src="images/slide4.jpg" />
-                
-                <span>
-                <span class="dropdown">
-                <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
-                </i>
-                </span>
-                <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
-  <li><i class="fa fa-twitter-square twitter-link"></i></li>
-  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
-  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
-    </ul>
-
-    </span>
-                
-                
-                </i><i class="fa fa-comment"><small>300</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
-                </span>
-               
-              
-                 
-                <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-           
-        </div>
-                
-        <div class="news-box">
-              
-                <img src="images/slide4.jpg" />
-                
-                <span>
-                <span class="dropdown">
-                <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
-                </i>
-                </span>
-                <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
-  <li><i class="fa fa-twitter-square twitter-link"></i></li>
-  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
-  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
-    </ul>
-
-    </span>
-                
-                
-                </i><i class="fa fa-comment"><small>300</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
-                </span>
-               
-              
-                 
-                <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-           
-        </div>
-                
-        <div class="news-box">
-              
-                <img src="images/slide4.jpg" />
-                
-                <span>
-                <span class="dropdown">
-                <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
-                </i>
-                </span>
-                <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
-  <li><i class="fa fa-twitter-square twitter-link"></i></li>
-  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
-  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
-    </ul>
-
-    </span>
-                
-                
-                </i><i class="fa fa-comment"><small>300</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
-                </span>
-               
-              
-                 
-                <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-           
-        </div>
-                
-                
-        <div class="news-box">
-              
-                <img src="images/slide4.jpg" />
-                
-                <span>
-                <span class="dropdown">
-                <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
-                </i>
-                </span>
-                <ul class="dropdown-menu">
-      <li><i class="fa fa-facebook-square fb-link"></i></li>
-  <li><i class="fa fa-twitter-square twitter-link"></i></li>
-  <li><i class="fa fa-youtube-play youtube-link"></i></li> 
-  <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
-    </ul>
-
-    </span>
-                
-                
-                </i><i class="fa fa-comment"><small>300</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
-                </span>
-               
-              
-                 
-                <h4><a href="viewnews.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-           
-        </div>-->
       </div>
           </div>
     
