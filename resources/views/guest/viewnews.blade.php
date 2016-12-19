@@ -5,7 +5,9 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{$article->post->title}}" />
     <meta property="og:description" content="{{$article->post->lead}}" />
+    @unless($article->picture == 'none')
     <meta property="og:image" content="{{asset('storage/'. $article->picture)}}" />
+    @endunless
 @endsection
 @section('mid_col')
     @unless(Auth::guest())
