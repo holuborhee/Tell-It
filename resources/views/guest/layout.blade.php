@@ -139,7 +139,7 @@
                
               
                  
-                <h4><a href="viewnews.html">{{$post->title}}</a></h4>
+                <h4><a href="{{url('/report/'.$post->textpost->id)}}">{{$post->title}}</a></h4>
            
         </div>
         @endforeach

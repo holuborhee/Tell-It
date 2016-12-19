@@ -28,7 +28,7 @@
       <div class = "item {{ $i == 1 ? 'active' : '' }}">
          <img src = "{{asset('storage/'. $p->textpost->picture)}}" alt = "First slide">
          <div class="carousel-caption headline-carousel">
-        <p class="lead"><a href="viewnews.html">{{$p->title}}</a></p>
+        <p class="lead"><a href="{{url('/report/'.$p->textpost->id)}}">{{$p->title}}</a></p>
         <p>{{$p->lead}}</p>
       </div>
       </div>
