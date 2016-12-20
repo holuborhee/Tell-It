@@ -84,6 +84,18 @@
                 <a class="left carousel-control" data-slide="prev" href="#picture-post-carousel"><span class="icon-prev"></span></a>
                 <a class="right carousel-control" data-slide="next" href="#picture-post-carousel"><span class="icon-next"></span></a>
   </div>
+
+
+  <div class="panel panel-default" style="margin-top:35px;">
+                
+            <div class="panel-body">
+                <h3>{{$pos->users->first()->name}}</h3>
+                <p>{{$pos->users->first()->description}}</p>
+            </div>
+
+            <div class="panel-footer">
+            </div>
+    </div>
     
     
     

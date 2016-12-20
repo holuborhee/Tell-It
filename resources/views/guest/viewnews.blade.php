@@ -50,6 +50,19 @@
     </div>
     
     {!!html_entity_decode($article->body)!!}
+
+
+    <div class="panel panel-default" style="margin-top:35px;">
+                
+            <div class="panel-body">
+                <h3>{{$article->post?$article->post->users->first()->name:$article->column->user->name}}</h3>
+                <p>{{$article->post?$article->post->users->first()->description:$article->column->user->description}}</p>
+            </div>
+
+            <div class="panel-footer">
+            </div>
+    </div>
+
     
     <ul class="news-action">
     <!--<li><a href="#"><i class="fa fa-heart-o"></i></a> {{$article->post->likes or $article->likes}} people like this</li>-->

@@ -65,9 +65,9 @@
                         <i class="fa fa-cog fa-5x"></i>
                           <h4>Infographics</h4>
                      </a>
-                     <a class="col-sm-4 well text-center">
+                     <a href="{{url('/user/' . Request::user()->id)}}" class="col-sm-4 well text-center">
                         <i class="fa fa-user fa-5x"></i>
-                          <h4>Personal Settings</h4>
+                          <h4>Profile</h4>
                      </a>
                      @if(Request::user()->isAdministrator())
                      <a href="{{ url('/breaking-news') }}" class="col-sm-4 well text-center">

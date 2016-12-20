@@ -96,7 +96,13 @@ class UserController extends Controller
 		if (!Gate::allows('crud-user')) {
 				return redirect('/home');
 		}
-		return view('users.displayuser',User::findOrFail($id));
+		if(Auth::user()->id == $id)
+			return view('users.profile');
+		else
+			return view('users.displayuser',User::findOrFail($id));
+
+
+
 	}
 
 	/**
@@ -124,6 +130,26 @@ class UserController extends Controller
 	public function update(Request $request, $id)
 	{
 		//
+
+		if($request->ajax()){
+			$user = Auth::user();
+			if($request->col == 'name')				
+				$user->name = $request->value;
+			else if($request->col == 'email')				
+				$user->email = $request->value;
+			else if($request->col == 'phone')				
+				$user->phone = $request->value;
+			else if($request->col == 'description')				
+				$user->description = $request->value;
+
+
+			$user->save();
+
+			return $user;
+
+
+		}
+		else{
 		if (!Gate::allows('crud-user')) {
 				return redirect('/home');
 		}
@@ -153,6 +179,7 @@ class UserController extends Controller
 			'role_id' => $data['role'],
 			'isActivated' => 0,
 		]);*/
+	}
 	}
 
 	/**
