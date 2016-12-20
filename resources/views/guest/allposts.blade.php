@@ -16,7 +16,7 @@
   <div class="feed-btn-abs">
   <div class="dropdown">
   <span class="dropdown-toggle" data-toggle="dropdown">
-  <i class="fa fa-share-alt"><small> 3K</small>
+  <i class="fa fa-share-alt"><small> {{$p->post->shares}}</small>
   </i>
   </span>
     <ul class="dropdown-menu">
@@ -26,8 +26,9 @@
   <li><i class="fa fa-google-plus-square google-plus-link"></i></li>
     </ul>
   </div>
-  <i class="fa fa-comment"><small> 300</small></i>
-  <i class="fa fa-heart-o"><small> 1.5K</small></i>
+  <i class="fa fa-eye"><small> {{$p->post->views}}</small></i>
+  <i class="fa fa-comment"><small> <span class="fb-comments-count" data-href="{{url('/report/' .$p->id)}}"></span></small></i>
+  <div class="fb-like" data-href="{{url('/report/' . $p->id)}}" data-width="10" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
   </div>
   </div>
     <mark>{{$cat->name}}</mark>

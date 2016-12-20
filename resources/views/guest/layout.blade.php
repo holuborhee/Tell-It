@@ -152,7 +152,7 @@
                 <span>
                 <span class="dropdown">
                 <span class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-share-alt"><small>3K</small>
+                <i class="fa fa-share-alt"><small> {{$post->shares}}</small>
                 </i>
                 </span>
                 <ul class="dropdown-menu">
@@ -165,7 +165,10 @@
     </span>
                 
                 
-                </i><i class="fa fa-eye"><small>{{$post->views}}</small></i><i class="fa fa-thumbs-up"><small>1.5K</small></i>
+                </i><i class="fa fa-eye"><small>{{$post->views}}</small></i>
+
+  <i class="fa fa-comment"><small> <span class="fb-comments-count" data-href="{{url('/report/' .$post->textpost->id)}}"></span></small></i>
+  <div class="fb-like" data-href="{{url('/report/' . $post->textpost->id)}}" data-width="10" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
                 </span>
                
               
@@ -307,7 +310,7 @@
     });
 </script>
 
-<script id="dsq-count-scr" src="//verbatim-express.disqus.com/count.js" async></script>
+<!--<script id="dsq-count-scr" src="//verbatim-express.disqus.com/count.js" async></script>-->
 @yield('pagejavascript')
 </body>
 </html>

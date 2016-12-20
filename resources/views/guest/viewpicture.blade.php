@@ -88,12 +88,13 @@
     
     
     <ul class="news-action">
-    <li><a href="#"><i class="fa fa-heart-o"></i></a> {{$pos->likes}} people like this</li>
+    <!--<li><a href="#"><i class="fa fa-heart-o"></i></a> {{$pos->likes}} people like this</li>-->
+    <div class="fb-like" data-href="{{url('/photos/' . $pos->id)}}" data-width="25" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     <li><button type="button" class="btn btn-primary fb-link" id="fb-share"><i class="fa fa-facebook"></i> Facebook</button></li>
     <li><button type="button" class="btn btn-primary twitter-link"><i class="fa fa-twitter"></i>Twitter</button></li>
     <li><button type="button" class="btn btn-primary google-plus-link"><i class="fa fa-google-plus"></i>Google +</button></li>
      </ul>
-     <img class="img-responsive advert" src="images/googleadvert.gif" /> 
+      
 
      <div class="form-group visible-xs">
 
@@ -101,8 +102,8 @@
 
 </div>
 
-
-<div id="disqus_thread" class="hidden-xs"></div>
+<div class="fb-comments" data-href="{{url('/photos/' . $pos->id)}}" data-width="100%" data-numposts="20"></div>
+<!--<div id="disqus_thread" class="hidden-xs"></div>
 
 <script>
 
@@ -122,7 +123,7 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
 
 
 @endsection

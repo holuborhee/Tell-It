@@ -58,7 +58,7 @@
     <li><button type="button" class="btn btn-primary twitter-link"><i class="fa fa-twitter"></i>Twitter</button></li>
     <li><button type="button" class="btn btn-primary google-plus-link"><i class="fa fa-google-plus"></i>Google +</button></li>
      </ul>
-     <img class="img-responsive advert" src="images/googleadvert.gif" /> 
+      
 
      <div class="form-group visible-xs">
 
@@ -66,7 +66,7 @@
 
 </div>
 
-<div class="fb-comments" data-href="{{url('/report/' . $article->id)}}" data-numposts="20"></div>
+<div class="fb-comments" data-href="{{$article->post?url('/report/' . $article->id):url('/article/' . $article->id)}}" data-width="100%" data-numposts="20"></div>
 <!--<div id="disqus_thread" class="hidden-xs"></div>
 
 <script>
@@ -121,7 +121,7 @@ $.ajaxSetup({
         FB.ui({
             method: 'share',
             display: 'popup',
-            href: '{{url('/report/' . $article->id)}}',
+            href: '{{$article->post?url('/report/' . $article->id):url('/article/' . $article->id)}}',
             }, function(response){});
     });
 
