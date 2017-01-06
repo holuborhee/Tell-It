@@ -54,14 +54,6 @@ class User extends Authenticatable
     }
 
 
-    public function getGenderAttribute($value)
-    {
-        if($value == 0)
-        {
-            return ucfirst('female');
-        }
-        else return ucfirst('male');
-    }
 
     public function getIsActivatedAttribute($value)
     {
@@ -72,10 +64,7 @@ class User extends Authenticatable
         else return true;
     }
 
-    public function getCreatedAtAttribute($value)
-    {
-        return date('F d, Y', strtotime($value));
-    }
+    
 
     public function isAdministrator(){
         return $this->role->name === 'Administrator';
