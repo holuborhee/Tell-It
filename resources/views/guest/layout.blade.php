@@ -147,7 +147,7 @@
     
         <div class="news-box">
               @unless($post->textpost->picture == 'none')
-                <img src="{{asset('storage/'. $post->textpost->picture)}}" /> 
+                <img src="{{asset('images/uploads/'. $post->textpost->picture)}}" /> 
                @endunless 
                 <span>
                 <span class="dropdown">

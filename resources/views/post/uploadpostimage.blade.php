@@ -30,7 +30,7 @@
                 </div>
                 <div class="panel-body">
                 @if(App\Post::findOrFail($id)->textpost->picture != 'none')
-                <img width="100" src="{{ asset('storage/'. App\Post::findOrFail($id)->textpost->picture)}}" height="100" />
+                <img width="100" src="{{ asset('images/uploads/'. App\Post::findOrFail($id)->textpost->picture)}}" height="100" />
                 <br />
                 <br />
                 <br />

@@ -29,7 +29,7 @@
       <?php continue; ?>
     @endif
       <div class = "item {{ $i == 1 ? 'active' : '' }}">
-         <img src = "{{asset('storage/'. $p->textpost->picture)}}" alt = "First slide">
+         <img src = "{{asset('images/uploads/'. $p->textpost->picture)}}" alt = "First slide">
          <div class="carousel-caption headline-carousel">
         <p class="lead"><a href="{{url('/report/'.$p->textpost->id)}}">{{$p->title}}</a></p>
         <p>{{$p->lead}}</p>
@@ -56,7 +56,7 @@
   @foreach(App\Article::where('inthumbnail',1)->cursor() as $p)
     <div class="@if($count==4) col-sm-3 @elseif($count==3) col-sm-4 @elseif($count==2) col-sm-6 @elseif($count==1) col-sm-12 @endif">
       <div class="thumbnail">
-        <img src="{{asset('storage/'.$p->picture)}}" alt="article image">
+        <img src="{{asset('images/uploads/'.$p->picture)}}" alt="article image">
         <a href="{{url('/article/'.$p->id)}}"><strong>{{$p->title}}.</strong></a>
           
       </div>
@@ -103,7 +103,7 @@
 
 @else
   <div class="newsfeed textnews">
-<img src="{{$post->picture != 'none'?asset('storage/'. $post->picture):asset('storage/reports/news.jpg')}}" class="textnews-img" />
+<img src="{{$post->picture != 'none'?asset('images/uploads/'. $post->picture):asset('images/uploads/reports/news.jpg')}}" class="textnews-img" />
   <div class="content">
   <div class="feed-btn hidden">
   <div class="feed-btn-abs">
@@ -160,7 +160,7 @@
   </div>
   </div>
     <h3><mark>PHOTO</mark> - <a href="{{url('/photos/'.$p->id)}}">{{$p->title}}.</a></h3>
-        <img src="{{asset('storage/'. $p->photos->first()->picture)}}"  />
+        <img src="{{asset('images/uploads/'. $p->photos->first()->picture)}}"  />
         <p><strong>{{$p->photos->count()}} Photos</strong></p>
       </div>  
 </div>

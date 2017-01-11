@@ -22,7 +22,7 @@ class PhotoUploadController extends Controller
     		//
     		//$photo = $request->file('file');
     		//$folder = Storage::makeDirectory('images/uploads/post/'.$request->post_id);
-    		$path = $request->file('file')->store('reports/'.$request->post_id,'public');
+    		$path = $request->file('file')->store('reports/'.$request->post_id,'local');
     		$photo = new PicturePost();
     		$photo->picture = $path;
 
@@ -43,8 +43,8 @@ class PhotoUploadController extends Controller
             //
             //$photo = $request->file('file');
             //$folder = Storage::makeDirectory('images/uploads/post/'.$request->post_id);
-            Storage::deleteDirectory('public/articles/'.$request->post_id);
-            $path = $request->file('file')->store('articles/'.$request->post_id,'public');
+            Storage::deleteDirectory('articles/'.$request->post_id);
+            $path = $request->file('file')->store('articles/'.$request->post_id,'local');
             $article = Article::findOrFail($request->post_id);
             $article->picture = $path;
 
@@ -66,8 +66,8 @@ class PhotoUploadController extends Controller
             //
             //$photo = $request->file('file');
             //$folder = Storage::makeDirectory('images/uploads/post/'.$request->post_id);
-            Storage::deleteDirectory('public/reports/'.$request->post_id);
-            $path = $request->file('file')->store('reports/'.$request->post_id,'public');
+            Storage::deleteDirectory('reports/'.$request->post_id);
+            $path = $request->file('file')->store('reports/'.$request->post_id,'local');
             $post = Post::findOrFail($request->post_id)->textpost;
             $post->picture = $path;
 
