@@ -85,7 +85,7 @@
     </div>
 
 
-    <div class="form-group">
+    <!--<div class="form-group">
     <label class="col-sm-2" for="newsTag">Tags</label>
     <div class="col-sm-10">
 
@@ -100,7 +100,7 @@
                                     </span>
                                 @endif
     </div>
-    </div>
+    </div>-->
     <div class="form-group{{ $errors->has('publish') ? ' has-error' : '' }}">
                             
 
