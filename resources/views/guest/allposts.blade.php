@@ -39,7 +39,7 @@
 </div>
 @else
 <div class="newsfeed textnews">
-<img src="{{$p->picture != 'none'?asset('storage/'. $p->picture):asset('storage/reports/news.jpg')}}" class="textnews-img" />
+<img src="{{$p->picture != 'none'?asset('images/uploads/'. $p->picture):asset('images/uploads/reports/news.jpg')}}" class="textnews-img" />
   <div class="content">
   <div class="feed-btn hidden">
   <div class="feed-btn-abs">

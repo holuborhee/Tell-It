@@ -61,7 +61,7 @@
                 @foreach($posts as $post)
                     <div class="col-xs-4 well text-center slideshow-box">
                     <div class="thumbnail">
-                        <img src="{{asset('storage/'. $post->textpost->picture)}}" alt="...">
+                        <img src="{{asset('images/uploads/'. $post->textpost->picture)}}" alt="...">
                         <div class="caption">
                         <p><small>{{$post->title}}.</small></p>
                         </div>
@@ -96,7 +96,7 @@
                 @foreach($articles as $post)
                     <div class="col-xs-4 well text-center slideshow-box">
                     <div class="thumbnail">
-                        <img src="{{asset('storage/' . $post->picture)}}" alt="...">
+                        <img src="{{asset('images/uploads/' . $post->picture)}}" alt="...">
                         <div class="caption">
                         <p><small>{{$post->title}}</small></p>
                         </div>
@@ -256,7 +256,7 @@ function getPageData(url) {
         rows = rows + '<div class="row news-modal-body">';
         rows = rows + '<span class="col-sm-2"><input type="radio" value="' + value.id + '" class="radio-inline" name="news" /> </span>';
         rows = rows + '<span class="col-sm-8"><h3 >' + value.title + '</h3></span>';
-        rows = rows + '<span class="col-sm-2"><img src="storage/' + value.textpost.picture +'" class="img-responsive" /></span>';
+        rows = rows + '<span class="col-sm-2"><img src="images/uploads/' + value.textpost.picture +'" class="img-responsive" /></span>';
                 rows = rows + '</div>';
         rows = rows + '</li>';
     });
@@ -282,7 +282,7 @@ function updateSlideShow()
 
         rows = rows + '<div class="col-xs-4 well text-center slideshow-box">'
                     rows = rows + '<div class="thumbnail">'
-                        rows = rows + '<img src="storage/' + value.textpost.picture +'" alt="...">'
+                        rows = rows + '<img src="images/uploads/' + value.textpost.picture +'" alt="...">'
                         rows = rows + '<div class="caption">'
                         rows = rows + '<p><small>' + value.title + '</small></p>'
                         rows = rows + '</div>'
@@ -359,7 +359,7 @@ $.ajaxSetup({
 
         rows = rows + '<div class="col-xs-4 well text-center slideshow-box">'
                     rows = rows + '<div class="thumbnail">'
-                        rows = rows + '<img src="storage/' + value.textpost.picture +'" alt="...">'
+                        rows = rows + '<img src="images/uploads/' + value.textpost.picture +'" alt="...">'
                         rows = rows + '<div class="caption">'
                         rows = rows + '<p><small>' + value.title + '</small></p>'
                         rows = rows + '</div>'
@@ -453,7 +453,7 @@ function getPageData(url) {
         rows = rows + '<div class="row news-modal-body">';
         rows = rows + '<span class="col-sm-2"><input type="radio" value="' + value.id + '" class="radio-inline" name="news" /> </span>';
         rows = rows + '<span class="col-sm-8"><h3 >' + value.title + '</h3></span>';
-        rows = rows + '<span class="col-sm-2"><img src="storage/' + value.textpost.picture +'" class="img-responsive" /></span>';
+        rows = rows + '<span class="col-sm-2"><img src="images/uploads/' + value.textpost.picture +'" class="img-responsive" /></span>';
                 rows = rows + '</div>';
         rows = rows + '</li>';
     });
@@ -499,7 +499,7 @@ $(document).on('click','.remove-btn', function(event){
 
         rows = rows + '<div class="col-xs-4 well text-center slideshow-box">'
                     rows = rows + '<div class="thumbnail">'
-                        rows = rows + '<img src="storage/' + value.textpost.picture +'" alt="...">'
+                        rows = rows + '<img src="images/uploads/' + value.textpost.picture +'" alt="...">'
                         rows = rows + '<div class="caption">'
                         rows = rows + '<p><small>' + value.title + '</small></p>'
                         rows = rows + '</div>'
@@ -567,7 +567,7 @@ function addToThumbnail(url, id){
 
         rows = rows + '<div class="col-xs-4 well text-center slideshow-box">'
                     rows = rows + '<div class="thumbnail">'
-                        rows = rows + '<img src="storage/' + value.picture +'" alt="...">'
+                        rows = rows + '<img src="images/uploads/' + value.picture +'" alt="...">'
                         rows = rows + '<div class="caption">'
                         rows = rows + '<p><small>' + value.title + '</small></p>'
                         rows = rows + '</div>'
@@ -681,7 +681,7 @@ function getPageData(url) {
         rows = rows + '<div class="row news-modal-body">';
         rows = rows + '<span class="col-sm-2"><input type="radio" value="' + value.id + '" class="select-article" name="news" /> </span>';
         rows = rows + '<span class="col-sm-8"><h3 >' + value.title + '</h3></span>';
-        rows = rows + '<span class="col-sm-2"><img src="storage/' + value.picture +'" class="img-responsive" /></span>';
+        rows = rows + '<span class="col-sm-2"><img src="images/uploads/' + value.picture +'" class="img-responsive" /></span>';
                 rows = rows + '</div>';
         rows = rows + '</li>';
     });
