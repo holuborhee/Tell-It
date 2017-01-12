@@ -14,7 +14,7 @@
                 <div class="panel-heading">
                 <div class="row">
                 <div class="col-sm-4">
-                    <img src="{{$picture === null ?asset('storage/users/default2.png'):asset('storage/'.$picture)}}" />
+                    <img src="{{$picture === null ?asset('images/uploads/users/default2.png'):asset('images/uploads/'.$picture)}}" />
                 </div>
                 <div class="col-sm-8 text-right">
                 <form class="form-inline" method="POST" action="{{ url('/user/'.$id) }}">

@@ -7,7 +7,7 @@
     <meta property="og:title" content="{{$pos->title}}" />
     <meta property="og:description" content="{{$pos->lead}}" />
     
-    <meta property="og:image" content="{{asset('storage/'. $pos->photos->first()->picture)}}" />
+    <meta property="og:image" content="{{asset('images/uploads/'. $pos->photos->first()->picture)}}" />
     
 @endsection
 @section('mid_col')
@@ -65,7 +65,7 @@
    @foreach(App\PicturePost::where('post_id',$pos->id)->cursor() as $p)
    
       <div class = "item {{ $i == 1 ? 'active' : '' }}">
-         <img src = "{{asset('storage/'. $p->picture)}}" alt = "First slide">
+         <img src = "{{asset('images/uploads/'. $p->picture)}}" alt = "First slide">
          <div class="carousel-caption">
         <p class="lead">{{$p->description}}</p>
       </div>

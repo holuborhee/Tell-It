@@ -14,7 +14,7 @@
 
 
 <script>
-var cities = new Bloodhound({
+/*var cities = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   prefetch: '<?php echo asset("js/tags.json") ?>'
@@ -30,6 +30,6 @@ elt.tagsinput({
     displayKey: 'name',
     source: cities.ttAdapter()
   }
-});
+});*/
 </script>
 

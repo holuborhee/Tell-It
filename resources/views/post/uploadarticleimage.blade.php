@@ -30,7 +30,7 @@
                 </div>
                 <div class="panel-body">
                 @if($picture != 'none')
-                <img width="100" src="{{ asset('storage/'. $picture)}}" height="100" />
+                <img width="100" src="{{ asset('images/uploads/'. $picture)}}" height="100" />
                 <br />
                 <br />
                 <br />

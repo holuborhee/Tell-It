@@ -65,7 +65,7 @@
                         <a href="{{ url('photos/1') }}" class="thumbnail">
                             <h3>{{$post->title}}.</h3>
 
-                                <img src="{{ asset('storage/'.$post->photos->first()->picture) }}"  />
+                                <img src="{{ asset('images/uploads/'.$post->photos->first()->picture) }}"  />
                                 <p><strong>{{$post->photos->count()}} Photos</strong> <strong>{{$post->likes}} Likes</strong> <strong>{{$post->shares}} Shares</strong> <strong>0 Comments</strong> 
                                 <mark>{{$post->created_at}}</mark></p>
 

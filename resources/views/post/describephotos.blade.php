@@ -31,7 +31,7 @@
                         <input type="hidden" name="post_id" value="{{Request::get('photo')}}" />
 @foreach(App\Post::findOrFail(Request::get('photo'))->photos()->cursor() as $pho)
 <div class="form-group{{ $errors->has('lead') ? ' has-error' : '' }}">
-                            <img src="{{ asset('storage/'.$pho->picture) }}" class="col-md-4" />
+                            <img src="{{ asset('images/uploads/'.$pho->picture) }}" class="col-md-4" />
 
                             <div class="col-md-8">
                                 <textarea id="lead" class="form-control" name="lead[{{$pho->id}}]" rows="5" placeholder="Description for Picture goes here" required>{{ old('lead') }}</textarea>

@@ -6,7 +6,7 @@
     <meta property="og:title" content="{{$article->post?$article->post->title:$article->title}}" />
     <meta property="og:description" content="{{$article->post?$article->post->lead:$article->lead}}" />
     @unless($article->picture == 'none')
-    <meta property="og:image" content="{{asset('storage/'. $article->picture)}}" />
+    <meta property="og:image" content="{{asset('images/uploads/'. $article->picture)}}" />
     @endunless
 @endsection
 @section('mid_col')

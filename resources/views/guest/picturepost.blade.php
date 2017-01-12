@@ -31,7 +31,7 @@
   </div>
   </div>
     <h3><a href="{{url('/photos/'.$p->id)}}"><mark>PHOTO</mark> - {{$p->title}}.</a></h3>
-        <img src="{{asset('storage/'. $p->photos->first()->picture)}}"  />
+        <img src="{{asset('images/uploads/'. $p->photos->first()->picture)}}"  />
         <p><strong>{{$p->photos->count()}} Photos</strong></p>
       </div>  
 </div>
