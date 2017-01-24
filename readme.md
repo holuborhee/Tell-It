@@ -12,6 +12,11 @@
 ###Screenshots
 
 ![Dashboard](/tellit/dashboard.PNG)
+![Breaking News](/tellit/breakingnews.PNG)
+![New Report](/tellit/new_report.PNG)
+![GUEST PAGE](/tellit/verbatim.PNG)
+![Headline Picture](/tellit/dp.PNG)
+![Customize Page](/tellit/customize.PNG)
 
 ## Getting Started
 
