@@ -11,7 +11,7 @@
 
 ###Screenshots
 
-Coming soon...
+![Dashboard](/tellit/dashboard.PNG)
 
 ## Getting Started
 
@@ -84,9 +84,9 @@ John David.
 
 ### Contacts
 
-*Email: daveholuborhee@gmail.com
-*LinkedIn: https://ng.linkedin.com/in/johnoluboridavid
-*Facebook: https://www.facebook.com/daveholuborhee
+* Email: daveholuborhee@gmail.com
+* LinkedIn: https://ng.linkedin.com/in/johnoluboridavid
+* Facebook: https://www.facebook.com/daveholuborhee
 
 ## License
 
