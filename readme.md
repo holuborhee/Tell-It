@@ -90,4 +90,4 @@ Facebook: https://www.facebook.com/daveholuborhee
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+This project is licensed under the [MIT license](http://opensource.org/licenses/MIT).
