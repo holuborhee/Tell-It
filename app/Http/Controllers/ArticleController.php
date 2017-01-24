@@ -106,11 +106,11 @@ class ArticleController extends Controller
         $article->picture = 'none';
         Column::find($request->column)->articles()->save($article);
 
-        $tagArray = explode(',', $request->news_tag);
+       /* $tagArray = explode(',', $request->news_tag);
         
 
         foreach($tagArray as $t)
-            $article->tags()->attach($t);
+            $article->tags()->attach($t);*/
 
         return view('post.uploadarticleimage',$article);
 

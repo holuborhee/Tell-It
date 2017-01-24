@@ -11,11 +11,22 @@
 
 ###Screenshots
 
+##### DASHBOARD
 ![Dashboard](/tellit/dashboard.PNG)
+
+##### Page to manage breaking news
 ![Breaking News](/tellit/breakingnews.PNG)
+
+##### Create New Report
 ![New Report](/tellit/new_report.PNG)
+
+##### Visitor's Page
 ![GUEST PAGE](/tellit/verbatim.PNG)
+
+##### Upload Report's Display Picture
 ![Headline Picture](/tellit/dp.PNG)
+
+##### Customizing the interface
 ![Customize Page](/tellit/customize.PNG)
 
 ## Getting Started

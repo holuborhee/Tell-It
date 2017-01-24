@@ -20,11 +20,6 @@ class Article extends Model
     	return $this->belongsTo('App\Column');
     }
 
-    public function tags()
-    {
-        return $this->belongsToMany('App\Tag')->withTimestamps();
-    }
-
     public function getDay()
     {
     	return date('l F d, Y', strtotime($this->created_at));

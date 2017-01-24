@@ -58,7 +58,7 @@ class TextPostController extends Controller
             'lead' => 'required',
             'body' => 'required',
             'category' => 'required',
-            'tags' => 'required'
+            
         ]);
 
         $post = new Post();
@@ -88,11 +88,11 @@ class TextPostController extends Controller
         if($request->has('publish'))
                 $post->users()->attach($request->user()->id, ['action' => 'Publish']);
 
-        $tagArray = explode(',', $request->news_tag);
+       /* $tagArray = explode(',', $request->news_tag);
         
 
         foreach($tagArray as $t)
-            $post->tags()->attach($t);
+            $post->tags()->attach($t);*/
                    
 
         return view('post.uploadpostimage',$post);

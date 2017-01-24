@@ -21,7 +21,6 @@ Route::get('/test', 'HomeController@test');
 Route::resource('user', 'UserController');
 Route::resource('post', 'PostController');
 Route::resource('article', 'ArticleController');
-Route::resource('tags', 'TagController');
 
 Route::resource('report', 'TextPostController');
 Route::resource('photos', 'PicturePostController');
