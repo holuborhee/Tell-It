@@ -59,12 +59,12 @@ Password: secret123
 
 ## Built With
 
-*[Laravel 5.3](https://laravel.com/)
-*[Twitter Bootstrap](https://getbootstrap.com/)
-*[JQUERY](https://jquery.com/)
-*[AJAX](https://getbootstrap.com/)
-*[MIND MUP](https://mindmup.github.io/bootstrap-wysiwyg/)
-*[DROPZONE JS](http://www.dropzonejs.com/)
+* [Laravel 5.3](https://laravel.com/)
+* [Twitter Bootstrap](https://getbootstrap.com/)
+* [JQUERY](https://jquery.com/)
+* [AJAX](https://getbootstrap.com/)
+* [MIND MUP](https://mindmup.github.io/bootstrap-wysiwyg/)
+* [DROPZONE JS](http://www.dropzonejs.com/)
 
 ## Contributing
 
