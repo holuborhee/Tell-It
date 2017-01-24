@@ -17,7 +17,7 @@ Coming soon...
 
 ### Prerequisites
 
-1. You must have [Apache Server](), [Mysql Database](), [PHP 5+](). You can either download all independently or download [XAMPP]().
+1. You must have [Apache Server](https://www.apache.org/), [Mysql Database](https://www.mysql.com/), [PHP 5+](http://php.net/). You can either download all independently or download [XAMPP](https://www.apachefriends.org/index.html).
 
 2. Setup GIT locally.
 
@@ -43,7 +43,7 @@ DB_USERNAME=YOUR USERNAME
 DB_PASSWORD=YOUR PASSWORD
 
 ```
-3. Rename the ".env.example" to ".env"
+Lastly, Rename the ".env.example" to ".env"
 
 ### Run the app
 
@@ -52,19 +52,19 @@ To get started navigate to the application in your browser, you are now good to 
 Use the below details to log in
 
 ```
-Email Address: **daveholuborhee@gmail.com**
-Password: **secret123**
+Email Address: daveholuborhee@gmail.com
+Password: secret123
 
 ```
 
 ## Built With
 
-[Laravel 5.3](https://laravel.com/)
-[Twitter Bootstrap](https://getbootstrap.com/)
-[JQUERY](https://jquery.com/)
-[AJAX](https://getbootstrap.com/)
-[MIND MUP](https://mindmup.github.io/bootstrap-wysiwyg/)
-[DROPZONE JS](http://www.dropzonejs.com/)
+*[Laravel 5.3](https://laravel.com/)
+*[Twitter Bootstrap](https://getbootstrap.com/)
+*[JQUERY](https://jquery.com/)
+*[AJAX](https://getbootstrap.com/)
+*[MIND MUP](https://mindmup.github.io/bootstrap-wysiwyg/)
+*[DROPZONE JS](http://www.dropzonejs.com/)
 
 ## Contributing
 
@@ -84,9 +84,9 @@ John David.
 
 ### Contacts
 
-Email: daveholuborhee@gmail.com
-LinkedIn: https://ng.linkedin.com/in/johnoluboridavid
-Facebook: https://www.facebook.com/daveholuborhee
+*Email: daveholuborhee@gmail.com
+*LinkedIn: https://ng.linkedin.com/in/johnoluboridavid
+*Facebook: https://www.facebook.com/daveholuborhee
 
 ## License
 
