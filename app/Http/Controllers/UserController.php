@@ -14,7 +14,7 @@ class UserController extends Controller
 	public function __construct()
 	{
 		$this->middleware('auth');
-		$this->middleware('admin');
+		$this->middleware('admin')->except(['edit','show']);
 		
 	}
 	/**
@@ -93,9 +93,7 @@ class UserController extends Controller
 	public function show($id)
 	{
 		//
-		if (!Gate::allows('crud-user')) {
-				return redirect('/home');
-		}
+		
 		if(Auth::user()->id == $id)
 			return view('users.profile');
 		else
@@ -113,11 +111,12 @@ class UserController extends Controller
 	 */
 	public function edit($id)
 	{
-		//
-		if (!Gate::allows('crud-user')) {
-				return redirect('/home');
-		}
-		return view('users.edituser',User::findOrFail($id));
+		if(Auth::user()->id == $id)
+			return view('users.uploadprofilepic',['id'=>$id]);
+		else if(Auth::user()->isAdministrator())
+			return view('users.edituser',User::findOrFail($id));
+		else
+			return redirect('/home');
 	}
 
 	/**

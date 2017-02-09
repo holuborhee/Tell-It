@@ -16,6 +16,16 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/user') }}">
                         {{ csrf_field() }}
 
+
+                        <div class="form-group">
+                            
+
+                            <div class="col-md-6 value">
+                                <img src="{{Auth::user()->picture == NULL ? asset('images/uploads/users/default2.png') :asset('images/uploads/'.Auth::user()->picture) }}" alt="..." class="img-circle profile_img">
+                            </div>
+
+                            <a class="col-md-4 btn btn-danger pull-right" href="{{ url('/user/' . Auth::user()->id . "/edit") }}"><i class="fa fa-pencil"></i> Change Display Picture</a>
+                        </div>
                         <div class="form-group">
                             <label for="name" class="col-md-4">Name</label>
 

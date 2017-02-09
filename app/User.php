@@ -64,6 +64,15 @@ class User extends Authenticatable
         else return true;
     }
 
+    public function getGenderAttribute($value)
+    {
+        if($value === 0)
+        {
+            return 'female';
+        }
+        else return 'male';
+    }
+
     
 
     public function isAdministrator(){

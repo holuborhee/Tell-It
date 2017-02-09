@@ -180,18 +180,38 @@
       </div>
           </div>
     
-    <div class="advert right-bar-child" >
-      <video controls <!--autoplay-->>
+    <!--<div class="advert right-bar-child" >
+      <video controls autoplay>
                                 <source src="videos/advert2.mp4"" type="video/mp4">
             </video>
+    </div>-->
+
+    <div class="advert right-bar-child" >
+
+    <?php $files = Storage::files('adverts/1'); ?>
+     @if(!empty($files))               
+      <img  src="{{asset('images/uploads/'.$files[0])}}" />
+    @else
+      <img  src="{{asset('images/uploads/adverts/ad3.png')}}" />
+    @endif
+    
+      
     </div>
 
     <div class="advert right-bar-child" >
-      <img src="images/verbatimadvert.jpg" />
+
+    <?php $files = Storage::files('adverts/2'); ?>
+    @if(!empty($files))               
+      <img  src="{{asset('images/uploads/'.$files[0])}}" />
+    @else
+      <img  src="{{asset('images/uploads/adverts/ad3.png')}}" />
+    @endif
+    
+      
     </div>
 
-    <div id = "mn" class = "carousel advert right-bar-child slide">
-          <!-- Carousel items -->
+    <!--<div id = "mn" class = "carousel advert right-bar-child slide">
+           
         <div class = "carousel-inner">
             <div class = "item active">
               <img src="images/advert2.jpg" alt="Advert" />
@@ -215,13 +235,13 @@
     </div>
 
     <div class="advert right-bar-child">
-      <video controls <!--autoplay-->>
+      <video controls autoplay>
                                 <source src="videos/advert1.mp4"" type="video/mp4">
             </video>
     </div>
 
     <div id = "mn" class = "carousel advert right-bar-child slide">
-          <!-- Carousel items -->
+           
         <div class = "carousel-inner">
             <div class = "item active">
               <img src="images/advert2.jpg" alt="Advert" />
@@ -242,7 +262,7 @@
               <img src="images/advert2.jpg" alt="Advert" />
             </div>
         </div>
-    </div>
+    </div>-->
     
   </div>
 

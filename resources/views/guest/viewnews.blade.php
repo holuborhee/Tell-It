@@ -55,6 +55,8 @@
     <div class="panel panel-default" style="margin-top:35px;">
                 
             <div class="panel-body">
+            <?php $user = $article->post?$article->post->users->first():$article->column->user; ?>
+            <img width="167" src="{{$user->picture == NULL ? asset('images/uploads/users/default2.png') :asset('images/uploads/'.$user->picture) }}" alt="..." class="img-circle profile_img pull-left">
                 <h3>{{$article->post?$article->post->users->first()->name:$article->column->user->name}}</h3>
                 <p>{{$article->post?$article->post->users->first()->description:$article->column->user->description}}</p>
             </div>

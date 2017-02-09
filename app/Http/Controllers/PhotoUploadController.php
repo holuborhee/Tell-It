@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\PicturePost;
 use App\Article;
+use App\User;
 use Illuminate\Support\Facades\Storage;
 
 class PhotoUploadController extends Controller
@@ -76,6 +77,48 @@ class PhotoUploadController extends Controller
         }
         else
         return response()->json('', 500);
+    }
+
+    public function displayPicture(Request $request)
+    {
+
+        $this->validate($request, [
+                'file' => 'image',
+        ]);
+        if ($request->file('file')->isValid()) {
+            //
+            //$photo = $request->file('file');
+            //$folder = Storage::makeDirectory('images/uploads/post/'.$request->post_id);
+            Storage::deleteDirectory('users/'.$request->user_id);
+            $path = $request->file('file')->store('users/'.$request->user_id,'local');
+            $user = User::findOrFail($request->user_id);
+            $user->picture = $path;
+
+            $user->save();
+            return response()->json('', 200);
+        }
+        else
+        return response()->json('', 500);
+    }
+
+
+
+    public function newAdvert(Request $request)
+    {
+        $this->validate($request, [
+                'file' => 'image',
+        ]);
+        if ($request->file('file')->isValid()) {
+            //
+            //$photo = $request->file('file');
+            //$folder = Storage::makeDirectory('images/uploads/post/'.$request->post_id);
+            Storage::deleteDirectory('adverts/'.$request->advert);
+            $path = $request->file('file')->store('adverts/'.$request->advert,'local');
+            return response()->json('', 200);
+        }
+        else
+        return response()->json('', 500);
+        
     }
 
     public function removephotoNews(Request $request)

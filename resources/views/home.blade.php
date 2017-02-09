@@ -74,7 +74,7 @@
                         <i class="fa fa-cog fa-5x"></i>
                           <h4>Breaking News</h4>
                      </a>
-                     <a href="{{ url('/user') }}" class="col-sm-4 well text-center">
+                     <a href="{{ url('/advert') }}" class="col-sm-4 well text-center">
                         <i class="fa fa-cog fa-5x"></i>
                           <h4>Manage Advert</h4>
                      </a>
@@ -206,3 +206,5 @@ $.ajaxSetup({
     }
 </script>
 @endsection
+
+

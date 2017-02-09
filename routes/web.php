@@ -34,13 +34,21 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/customize', 'HomeController@customize')->middleware('admin');;
+Route::get('/customize', 'HomeController@customize')->middleware('admin');
 
 Route::get('/editpersonal/changepassword', 'HomeController@changePassword');
 Route::post('/checkpassword', 'HomeController@checkpassword');
 
 Route::post('/postpassword', 'HomeController@postPassword');
+
+
+Route::get('/advert', 'HomeController@adverts');
+
+
+
 Route::post('/uploadphotos', 'PhotoUploadController@photoNews');
 Route::post('/removephotos', 'PhotoUploadController@removephotoNews');
 Route::post('/articlephoto', 'PhotoUploadController@articleDisplayPicture');
 Route::post('/reportphoto', 'PhotoUploadController@postDisplayPicture');
+Route::post('/uploadadvert', 'PhotoUploadController@newAdvert');
+Route::post('/uploadprofilephoto', 'PhotoUploadController@displayPicture');

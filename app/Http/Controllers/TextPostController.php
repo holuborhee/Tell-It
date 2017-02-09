@@ -191,3 +191,8 @@ class TextPostController extends Controller
         return view('info',['title'=>'SUCCESS', 'content'=>'Record Successfully Deleted','link'=>'/user','link_text'=>'Back To Home']);
     }
 }
+
+
+
+
+

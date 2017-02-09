@@ -14,7 +14,7 @@ class ArticleController extends Controller
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
 
-        $this->middleware('countview')->only('show');
+        $this->middleware('countview')->only('show'); 
     }
     /**
      * Display a listing of the resource.

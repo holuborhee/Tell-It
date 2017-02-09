@@ -62,7 +62,7 @@
 
                     @foreach($posts as $post)
                         <a href="{{url('/report/'.$post->id)}}" class="list-group-item report-short-display">
-                            <h4 class="list-group-item-heading">{{$post->post->title}}<small><em> by </em> John Doe <em> on </em> {{ $post->post->created_at}} </small></h4>
+                            <h4 class="list-group-item-heading">{{$post->post->title}}<small><em> by </em> {{$post->post->users->first()->name}} <em> on </em> {{ $post->post->created_at}} </small></h4>
                             
                             <div class="list-group-item-text row">
                             <div class="col-xs-3 col-sm-2 news-info text-center" >

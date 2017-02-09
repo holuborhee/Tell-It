@@ -32,10 +32,6 @@ class Post extends Model
         return $this->belongsToMany('App\User')->withPivot('action')->withTimestamps();
     }
 
-    public function tags()
-    {
-        return $this->belongsToMany('App\Tag')->withTimestamps();
-    }
 
     public function getDay()
     {

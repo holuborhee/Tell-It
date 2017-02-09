@@ -885,6 +885,7 @@ footer{
     border: 1px solid #C20;
     margin: 10px 0;
     font-style: italic;
+    font-weight: 800;
     position: relative;
     padding: 0 0 0 80px;
     box-shadow: 0 2px 5px -3px #000;
@@ -893,4 +894,5 @@ footer{
 
 .demo3 ul li{
     list-style: none;
+
 }

@@ -19,11 +19,12 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('admin')->only(['adverts','customize']);
     }
 
     /**
      * Show the application dashboard.
-     *
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -41,6 +42,13 @@ class HomeController extends Controller
     public function changePassword()
     {
         return view('changePassword');
+    }
+
+    public function adverts(Request $request)
+    {
+        if($request->has('page'))
+            return view('uploadadvert',['id'=>$request->page]);
+        return view('advert');
     }
 
 
